@@ -10,7 +10,7 @@
 
 */
 
-.button {
+.button__text::focus {
   transition: box-shadow 0.3s ease;
 }
 
@@ -141,6 +141,4 @@
   transform-origin: center;
 }
 
-.dialog {
-  transition: opacity 0.3s ease-in-out;
-}
+

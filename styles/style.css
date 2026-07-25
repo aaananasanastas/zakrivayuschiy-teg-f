@@ -296,10 +296,6 @@ dialog:not([open]) {
   display: none;
 }
 
-dialog[open] {
-  display: block;
-}
-
 .dialog {
   display: grid;
   grid-template-columns: 1fr;
