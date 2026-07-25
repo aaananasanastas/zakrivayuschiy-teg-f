@@ -192,7 +192,6 @@
   .code-label {
     -webkit-text-stroke: 1px var(--background-color);
     text-shadow: 1px var(--background-color);
-
   }
 }
 
