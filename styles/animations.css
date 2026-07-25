@@ -10,7 +10,6 @@
 
 */
 
-/* --- Переходы (transition) --- */
 .button {
   transition: box-shadow 0.3s ease;
 }
@@ -96,18 +95,33 @@
   border: 2px solid #000;
 }
 
-/* --- Анимации (keyframes + animation) --- */
 @keyframes heart {
-  0% { transform: scale(1); }
-  14% { transform: scale(1.15); }
-  28% { transform: scale(1); }
-  42% { transform: scale(1.15); }
-  70% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.15);
+  }
+  70% {
+    transform: scale(1);
+  }
 }
 
 @keyframes sparks {
-  0% { opacity: 0; transform: scale(0.5); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .is-liked .heart {
@@ -127,7 +141,6 @@
   transform-origin: center;
 }
 
-/* Плавность для диалога */
 .dialog {
   transition: opacity 0.3s ease-in-out;
 }
