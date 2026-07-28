@@ -394,5 +394,7 @@ dialog::backdrop {
     width: 28px;
     height: 100%;
     margin: 0 auto 8px auto;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
   }
 }
