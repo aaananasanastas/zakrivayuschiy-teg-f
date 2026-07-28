@@ -17,7 +17,7 @@
   background-attachment: local;
   background-blend-mode: normal;
   font-variation-settings: "wght" var(--font-weight-main, 400);
-    background-image:
+  background-image:
     var(
       --background-image-main,
       repeating-linear-gradient(
@@ -246,7 +246,7 @@ dialog::backdrop {
 
 .like-icon .heart .contur {
   fill: #000000;
-  stroke: none; 
+  stroke: none;
   transition: fill 0.1s linear;
 }
 
