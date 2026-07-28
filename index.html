@@ -14,19 +14,22 @@
     <link rel="apple-touch-icon" href="./images/favicon.png" />
   </head>
   <body class="page">
-   <header class="header">
-  <h1 class="header__logo">&lt;/html&gt;</h1>
-  <h2 class="header__title">Закрывающий тег</h2>
-</header>
+    <header class="header">
+      <h1 href="/" class="header__logo" aria-label="На главную"
+          >&lt;/html&gt;</h1>
+      <h2 class="header__title">Закрывающий тег</h2>
+    </header>
 
     <main>
       <article class="card-gallery">
         <!-- Карточка 1 -->
-        <h3 class="card_box">
-          Фритрек и нулевой спринт: Подготовка к работе
-        </h3>
+        <h3 class="card_box">Фритрек и нулевой спринт: Подготовка к работе</h3>
         <div class="card__image">
-          <img src="./images/thecar.svg" alt="Картинка фургона в кинемотографичном фильтре" class="card__img" />
+          <img
+            src="./images/thecar.svg"
+            alt="Картинка фургона в кинемотографичном фильтре"
+            class="card__img filtered-film"
+          />
           <span class="code-label">&lt;/html&gt;</span>
         </div>
         <div class="card__text">
@@ -83,7 +86,7 @@
           <img
             src="./images/thecar.svg"
             alt="Картинка фургона в черно-белом фильтре"
-            class="card__img filtered-grayscale"
+            class="card__img filtered-high-contrast-bw"
           />
           <span class="code-label">&lt;/html&gt;</span>
         </div>
@@ -143,7 +146,7 @@
           <img
             src="./images/thecar.svg"
             alt="Картинка фургона в неоновом фильтре"
-            class="card__img filtered-saturate"
+            class="card__img filtered-neon-shift"
           />
           <span class="code-label">&lt;/html&gt;</span>
         </div>
@@ -201,7 +204,7 @@
           <img
             src="./images/thecar.svg"
             alt="Картинка фургона с заблюренном фильтре"
-            class="card__img filtered-rotate"
+            class="card__img filtered-soft-blur"
           />
           <span class="code-label">&lt;/html&gt;</span>
         </div>
@@ -261,7 +264,7 @@
           <img
             src="./images/thecar.svg"
             alt="Картинка фургона в негативе"
-            class="card__img filtered-invert"
+            class="card__img filtered-inverted-muted"
           />
           <span class="code-label">&lt;/html&gt;</span>
         </div>
@@ -322,7 +325,7 @@
           <img
             src="./images/thecar.svg"
             alt="Картинка фургона в ярко-насыщенном фильтре"
-            class="card__img filtered-sepia"
+            class="card__img filtered-cinematic-saturate"
           />
           <span class="code-label">&lt;/html&gt;</span>
         </div>
@@ -380,7 +383,7 @@
           <img
             src="./images/thecar.svg"
             alt="Картинка фургона в синих тонах"
-            class="card__img filtered-blur"
+            class="card__img filtered-blue-mono"
           />
           <span class="code-label">&lt;/html&gt;</span>
         </div>
@@ -440,7 +443,7 @@
           <img
             src="./images/thecar.svg"
             alt="Картинка фургона в розово-синих тонах"
-            class="card__img filtered-contrast"
+            class="card__img filtered-winter-tone"
           />
           <span class="code-label">&lt;/html&gt;</span>
         </div>
@@ -511,14 +514,14 @@
         </button>
       </div>
     </main>
-    
+
     <dialog id="dialog-id" aria-label="Кнопка для сохранения">
       <div class="section-dialog">
         <div class="dialog__message">
           <svg class="floppy" width="21" height="21" viewBox="0 0 21 21">
             <use href="./svg/floppy.svg" />
           </svg>
-          <p>Вставьте<br>дискету, чтобы продолжить</p>
+          <p>Вставьте<br />дискету, чтобы продолжить</p>
         </div>
         <button
           class="dialog__button button"

@@ -1,36 +1,63 @@
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+*/
+
 .page {
   min-inline-size: 320px;
-  min-block-size: 100dvb;
-  background-image: var(--grid-gradient);
+  inline-size: 100%;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: local;
   background-blend-mode: normal;
-  font-variation-settings: "wght" 410;
+  font-variation-settings: "wght" var(--font-weight-main, 400);
+    background-image:
+    var(
+      --background-image-main,
+      repeating-linear-gradient(
+        to bottom,
+        #d3d3d3 0 2px,
+        rgb(211 211 211 / 0) 2px 4px
+      )
+    ),
+    repeating-linear-gradient(
+      to right,
+      #d3d3d3 0 2px,
+      rgb(211 211 211 / 0) 2px 4px
+    ),
+    linear-gradient(to bottom, #e7e7e7, #e7e7e7 0.01%, #1a1a1a 100%);
 }
 
 dialog {
   border: var(--basic-border);
   min-inline-size: 341px;
-  min-block-size: 191px;
   max-inline-size: 353px;
-  max-block-size: 191px;
+  block-size: 191px;
 }
 
 .section-dialog {
   height: 100%;
   padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dialog__message {
   display: flex;
   gap: 20px;
   font-family: var(--title-font-family);
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--base-font-size);
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
-.dialog__message .save-icon {
+.dialog__message .floppy {
   width: 39px;
   height: auto;
   flex-shrink: 0;
@@ -49,10 +76,9 @@ dialog::backdrop {
 
 .header,
 .card-gallery,
-.panel {
+.button-wrapper {
   width: clamp(375px, 80%, 700px);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .header {
@@ -64,8 +90,6 @@ dialog::backdrop {
   font-family: var(--title-font-family);
   border: var(--basic-border);
   margin: 100px auto;
-
-  /* переносим сюда */
   width: clamp(375px, 80%, 700px);
   margin-left: auto;
   margin-right: auto;
@@ -73,6 +97,7 @@ dialog::backdrop {
 
 .header__logo {
   font-size: clamp(49px, 5vw, 65px);
+  text-decoration: none;
 }
 
 .header__title {
@@ -91,7 +116,7 @@ dialog::backdrop {
   border-block-start: var(--basic-border);
   border-inline-start: var(--basic-border);
   border-inline-end: var(--basic-border);
-  font-size: 18px;
+  font-size: var(--font-size-card);
   font-variation-settings: "wght" 715;
 }
 
@@ -114,7 +139,7 @@ dialog::backdrop {
   right: 25px;
   text-transform: uppercase;
   font-family: var(--title-font-family);
-  font-size: 14px;
+  font-size: var(--base-font-size);
   color: #000;
   mix-blend-mode: hard-light;
   text-shadow: 0 0 0.5px #fff;
@@ -130,7 +155,7 @@ dialog::backdrop {
   padding: 17px 27px 23px 27px;
   border-inline-start: var(--basic-border);
   border-inline-end: var(--basic-border);
-  font-size: 18px;
+  font-size: var(--font-size-card);
 }
 
 .card__text p:last-child {
@@ -144,7 +169,7 @@ dialog::backdrop {
   background-color: var(--basic-bg-color);
   border: var(--basic-border);
   font-family: var(--title-font-family);
-  font-size: 14px;
+  font-size: var(--base-font-size);
 }
 
 .button:focus {
@@ -189,6 +214,10 @@ dialog::backdrop {
   box-shadow: 2px 2px 0 #000;
 }
 
+.card__like-button:hover {
+  transform: translateY(-4px);
+}
+
 .card__icon-button {
   background: transparent;
   border: 2px solid transparent;
@@ -215,10 +244,9 @@ dialog::backdrop {
   pointer-events: auto;
 }
 
-/* Базовый контур — всегда чёрный */
 .like-icon .heart .contur {
   fill: #000000;
-  stroke: none; /* если не нужно дополнительно обводить */
+  stroke: none; 
   transition: fill 0.1s linear;
 }
 
@@ -237,7 +265,6 @@ dialog::backdrop {
   transition: none;
 }
 
-/* Hover: контур остаётся чёрным, тело и ядро становятся чёрными */
 .like-icon:hover .heart .contur {
   transition: fill 0.3s linear 0s;
   fill: #000000;
@@ -257,7 +284,6 @@ dialog::backdrop {
   fill: transparent;
 }
 
-/* Active: сердце красное, контур по-прежнему чёрный */
 .like-icon:active .heart .main-body {
   transition: fill 0.3s linear 0.05s;
   fill: #ff0000;
@@ -272,14 +298,12 @@ dialog::backdrop {
   fill: transparent;
 }
 
-/* is-liked: сердце красное, но контур остаётся чёрным */
 .like-icon.is-liked .heart {
   animation: heartAnimation 0.3s ease-in forwards;
   animation-delay: 0.1s;
 }
 
 .like-icon.is-liked .heart .contur {
-  /* НЕ меняем на красный — оставляем чёрный */
   transition: fill 0.3s linear 0.06s;
   fill: #000000;
 }
@@ -307,9 +331,12 @@ dialog::backdrop {
 .save {
   display: flex;
   align-items: center;
-  flex-direction: row;
   margin: 0 auto;
   padding: 17px 20px;
+}
+
+.save:hover {
+  transform: translateY(-4px);
 }
 
 .save span {
@@ -320,34 +347,37 @@ dialog::backdrop {
   width: 21px;
   height: 100%;
   margin: 0 8px 0 0;
+  z-index: 3;
+}
+.filtered-film {
+  filter: sepia(80%) contrast(110%) brightness(95%);
+}
+.filtered-high-contrast-bw {
+  filter: grayscale(100%) sepia(60%) contrast(120%);
 }
 
-.filtered-grayscale {
-  filter: grayscale(70%);
+.filtered-neon-shift {
+  filter: hue-rotate(240deg) saturate(180%) contrast(120%);
 }
 
-.filtered-saturate {
-  filter: saturate(300%);
+.filtered-soft-blur {
+  filter: blur(6px);
 }
 
-.filtered-rotate {
-  filter: hue-rotate(30deg);
+.filtered-inverted-muted {
+  filter: invert(90%) brightness(85%) contrast(110%);
 }
 
-.filtered-invert {
-  filter: invert(0.7);
+.filtered-cinematic-saturate {
+  filter: saturate(220%) contrast(125%) brightness(95%);
 }
 
-.filtered-sepia {
-  filter: sepia(80%);
+.filtered-blue-mono {
+  filter: grayscale(100%) sepia(100%) saturate(500%) hue-rotate(210deg);
 }
 
-.filtered-blur {
-  filter: blur(0.6rem);
-}
-
-.filtered-contrast {
-  filter: hue-rotate(90deg) contrast(50%);
+.filtered-winter-tone {
+  filter: hue-rotate(-60deg) saturate(130%) contrast(115%);
 }
 
 @media (width <= 375px) {
