@@ -403,6 +403,7 @@ dialog::backdrop {
 .filtered-film {
   filter: sepia(80%) contrast(110%) brightness(95%);
 }
+
 .filtered-high-contrast-bw {
   filter: grayscale(100%) sepia(60%) contrast(120%);
 }
