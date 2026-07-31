@@ -1,9 +1,8 @@
 :root {
   --title-font-family: "PressStart2P", sans-serif;
   --text-font-family: "Inter-Variable", sans-serif;
-
   --basic-border: 2px solid #000;
-  --basic-bg-color: #FFFFFF;
+  --basic-bg-color: #ffffff;
   --basic-color: #000;
   --base-font-size: 14px;
   --font-size-card: 18px;
