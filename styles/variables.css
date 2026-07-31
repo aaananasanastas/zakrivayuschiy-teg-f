@@ -3,8 +3,9 @@
   --text-font-family: "Inter-Variable", sans-serif;
 
   --basic-border: 2px solid #000;
-  --basic-bg-color: #fff;
+  --basic-bg-color: #FFFFFF;
   --basic-color: #000;
   --base-font-size: 14px;
   --font-size-card: 18px;
+  --box-shadow: 2px 2px 0 #000;
 }
