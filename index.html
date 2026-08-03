@@ -508,26 +508,36 @@
       </article>
 
       <!-- Диалоговое окно -->
-      <div class="button-wrapper">
         <button
           class="button save"
           type="button"
           onclick="window['dialog-id'].showModal()"
           aria-controls="dialog-id"
         >
-          <svg class="floppy" width="21" height="21" viewBox="0 0 21 21">
-            <use href="./svg/floppy.svg" />
+          <svg
+            class="floppy"
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            aria-hidden="true"
+          >
+            <use href="./svg/floppy.svg#floppy"></use>
           </svg>
           <span class="button__text">Сохранить на память</span>
         </button>
-      </div>
     </main>
 
     <dialog id="dialog-id" aria-label="Кнопка для сохранения">
       <div class="section-dialog">
         <div class="dialog__message">
-          <svg class="floppy" width="21" height="21" viewBox="0 0 21 21">
-            <use href="./svg/floppy.svg" />
+          <svg
+            class="floppy"
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            aria-hidden="true"
+          >
+            <use href="./svg/floppy.svg#floppy"></use>
           </svg>
           <p>Вставьте дискету, чтобы продолжить</p>
         </div>
